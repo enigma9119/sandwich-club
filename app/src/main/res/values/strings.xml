@@ -12,8 +12,9 @@
 
     <!-- Error messages-->
     <string name="detail_error_message">Sandwich data not available</string>
-    <string name="ingredients_error">No ingredients found!</string>
-    <string name="place_of_origin_error">unknown origin!</string>
+    <string name="ingredients_error">No ingredients found</string>
+    <string name="place_of_origin_error">unknown origin</string>
+    <string name="description_error">No description found</string>
 
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>

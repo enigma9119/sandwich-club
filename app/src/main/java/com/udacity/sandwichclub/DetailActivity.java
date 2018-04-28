@@ -77,7 +77,14 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
         mTitleTextView.setText(sandwich.getMainName());
-        mDescriptionTextView.setText(sandwich.getDescription());
+
+        // Display sandwich description. If not found, display an error message.
+        if (sandwich.getDescription().isEmpty()) {
+            mDescriptionTextView.setText(R.string.description_error);
+            mDescriptionTextView.setTextColor(getResources().getColor(android.R.color.darker_gray));
+        } else {
+            mDescriptionTextView.setText(sandwich.getDescription());
+        }
 
         // Display place of origin. If not found, display an error message.
         if (sandwich.getPlaceOfOrigin().isEmpty()) {
@@ -93,7 +100,7 @@ public class DetailActivity extends AppCompatActivity {
             mAlsoKnownAsLabel.setVisibility(View.INVISIBLE);
             mAlsoKnownAsTextView.setVisibility(View.INVISIBLE);
         } else {
-            // Bring back the "also known as" fields in case they were set to GONE before
+            // Bring back the "also known as" fields in case they were set to INVISIBLE before
             mAlsoKnownAsLabel.setVisibility(View.VISIBLE);
             mAlsoKnownAsTextView.setVisibility(View.VISIBLE);
 
